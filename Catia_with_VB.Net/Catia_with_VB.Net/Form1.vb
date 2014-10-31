@@ -133,7 +133,7 @@
 
   Private Sub ReplaceText()
     Try
-      Dim i, j, k As Integer
+      Dim i, j, k, s As Integer
 
       Dim Text2Find As String
       If txt_toFind.TextLength > 0 Then
@@ -157,20 +157,18 @@
         Exit Sub
       End If
 
-      Dim drawingSheet As DRAFTINGITF.DrawingSheet = drawingDoc.Sheets.ActiveSheet
+      For s = 1 To drawingDoc.Sheets.Count
+        Dim drawingSheet As DRAFTINGITF.DrawingSheet = drawingDoc.Sheets.Item(s)
 
-      For i = 1 To drawingSheet.Views.Count
-        Dim theView As DRAFTINGITF.DrawingView = drawingSheet.Views.Item(i)
-        For j = 1 To theView.Texts.Count
-          Dim theText As DRAFTINGITF.DrawingText = theView.Texts.Item(j)
-          'MsgBox(theText.Text)
-          If theText.Text.Contains(Text2Find) Then
-            theText.Text = theText.Text.Replace(Text2Find, NewText)
-            k += 1
-          End If
-          'If theText.Text = Text2Find Then
-          '  theText.Text = NewText
-          'End If
+        For i = 1 To drawingSheet.Views.Count
+          Dim theView As DRAFTINGITF.DrawingView = drawingSheet.Views.Item(i)
+          For j = 1 To theView.Texts.Count
+            Dim theText As DRAFTINGITF.DrawingText = theView.Texts.Item(j)
+            If theText.Text.Contains(Text2Find) Then
+              theText.Text = theText.Text.Replace(Text2Find, NewText)
+              k += 1
+            End If
+          Next
         Next
       Next
       StatusLabel1.Text = "Replaced in " & k & " places"
