@@ -29,8 +29,11 @@ Partial Class Form1
     Me.MenuCatia = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuCatia_Connect = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuCatia_FindReplace = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuCatia_Colors = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuCatia_InsertText = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuHelp = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuHelp_About = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuHelp_ClearStatusMsg = New System.Windows.Forms.ToolStripMenuItem()
     Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
     Me.StatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
     Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -38,9 +41,7 @@ Partial Class Form1
     Me.Label2 = New System.Windows.Forms.Label()
     Me.txt_toFind = New System.Windows.Forms.TextBox()
     Me.txt_Replace = New System.Windows.Forms.TextBox()
-    Me.MenuHelp_ClearStatusMsg = New System.Windows.Forms.ToolStripMenuItem()
-    Me.MenuCatia_Colors = New System.Windows.Forms.ToolStripMenuItem()
-    Me.MenuCatia_InsertText = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuCatia_ReadViewLink = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuStrip1.SuspendLayout()
     Me.StatusStrip1.SuspendLayout()
     Me.TableLayoutPanel1.SuspendLayout()
@@ -70,7 +71,7 @@ Partial Class Form1
     '
     'MenuCatia
     '
-    Me.MenuCatia.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuCatia_Connect, Me.MenuCatia_FindReplace, Me.MenuCatia_Colors, Me.MenuCatia_InsertText})
+    Me.MenuCatia.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuCatia_Connect, Me.MenuCatia_FindReplace, Me.MenuCatia_Colors, Me.MenuCatia_InsertText, Me.MenuCatia_ReadViewLink})
     Me.MenuCatia.Name = "MenuCatia"
     Me.MenuCatia.Size = New System.Drawing.Size(46, 20)
     Me.MenuCatia.Text = "Catia"
@@ -78,14 +79,26 @@ Partial Class Form1
     'MenuCatia_Connect
     '
     Me.MenuCatia_Connect.Name = "MenuCatia_Connect"
-    Me.MenuCatia_Connect.Size = New System.Drawing.Size(152, 22)
+    Me.MenuCatia_Connect.Size = New System.Drawing.Size(153, 22)
     Me.MenuCatia_Connect.Text = "Connect"
     '
     'MenuCatia_FindReplace
     '
     Me.MenuCatia_FindReplace.Name = "MenuCatia_FindReplace"
-    Me.MenuCatia_FindReplace.Size = New System.Drawing.Size(152, 22)
+    Me.MenuCatia_FindReplace.Size = New System.Drawing.Size(153, 22)
     Me.MenuCatia_FindReplace.Text = "Find Replace"
+    '
+    'MenuCatia_Colors
+    '
+    Me.MenuCatia_Colors.Name = "MenuCatia_Colors"
+    Me.MenuCatia_Colors.Size = New System.Drawing.Size(153, 22)
+    Me.MenuCatia_Colors.Text = "Colors"
+    '
+    'MenuCatia_InsertText
+    '
+    Me.MenuCatia_InsertText.Name = "MenuCatia_InsertText"
+    Me.MenuCatia_InsertText.Size = New System.Drawing.Size(153, 22)
+    Me.MenuCatia_InsertText.Text = "Insert Text"
     '
     'MenuHelp
     '
@@ -99,6 +112,12 @@ Partial Class Form1
     Me.MenuHelp_About.Name = "MenuHelp_About"
     Me.MenuHelp_About.Size = New System.Drawing.Size(162, 22)
     Me.MenuHelp_About.Text = "About"
+    '
+    'MenuHelp_ClearStatusMsg
+    '
+    Me.MenuHelp_ClearStatusMsg.Name = "MenuHelp_ClearStatusMsg"
+    Me.MenuHelp_ClearStatusMsg.Size = New System.Drawing.Size(162, 22)
+    Me.MenuHelp_ClearStatusMsg.Text = "Clear Status Msg"
     '
     'StatusStrip1
     '
@@ -170,23 +189,11 @@ Partial Class Form1
     Me.txt_Replace.Size = New System.Drawing.Size(150, 20)
     Me.txt_Replace.TabIndex = 3
     '
-    'MenuHelp_ClearStatusMsg
+    'MenuCatia_ReadViewLink
     '
-    Me.MenuHelp_ClearStatusMsg.Name = "MenuHelp_ClearStatusMsg"
-    Me.MenuHelp_ClearStatusMsg.Size = New System.Drawing.Size(162, 22)
-    Me.MenuHelp_ClearStatusMsg.Text = "Clear Status Msg"
-    '
-    'MenuCatia_Colors
-    '
-    Me.MenuCatia_Colors.Name = "MenuCatia_Colors"
-    Me.MenuCatia_Colors.Size = New System.Drawing.Size(152, 22)
-    Me.MenuCatia_Colors.Text = "Colors"
-    '
-    'MenuCatia_InsertText
-    '
-    Me.MenuCatia_InsertText.Name = "MenuCatia_InsertText"
-    Me.MenuCatia_InsertText.Size = New System.Drawing.Size(152, 22)
-    Me.MenuCatia_InsertText.Text = "Insert Text"
+    Me.MenuCatia_ReadViewLink.Name = "MenuCatia_ReadViewLink"
+    Me.MenuCatia_ReadViewLink.Size = New System.Drawing.Size(153, 22)
+    Me.MenuCatia_ReadViewLink.Text = "Read View Link"
     '
     'Form1
     '
@@ -228,5 +235,6 @@ Partial Class Form1
   Friend WithEvents MenuHelp_ClearStatusMsg As System.Windows.Forms.ToolStripMenuItem
   Friend WithEvents MenuCatia_Colors As System.Windows.Forms.ToolStripMenuItem
   Friend WithEvents MenuCatia_InsertText As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MenuCatia_ReadViewLink As System.Windows.Forms.ToolStripMenuItem
 
 End Class

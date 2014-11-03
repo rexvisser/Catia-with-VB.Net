@@ -41,6 +41,10 @@
     insertText()
   End Sub
 
+  Private Sub MenuCatia_ReadViewLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuCatia_ReadViewLink.Click
+    ViewLink()
+  End Sub
+
 #End Region
 
   Private Sub insertText()
@@ -212,6 +216,69 @@
       Return Nothing
     End Try
     Return drawingDocument
+  End Function
+
+  Private Sub ViewLink()
+    Try
+      Dim drawingDoc As DRAFTINGITF.DrawingDocument = getDrawingDocument()
+      If drawingDoc Is Nothing Then
+        StatusLabel1.Text = "No drawing found"
+        Exit Sub
+      End If
+
+      theSelection.Clear()
+      Dim theView As DRAFTINGITF.DrawingView
+      Dim inputObjectType(0)
+      inputObjectType(0) = "DrawingView"
+      StatusLabel1.Text = "Select a Drawing View"
+      Dim Status As String = theSelection.SelectElement2(inputObjectType, "Select a Drawing View", True)
+      If Status = "Normal" AndAlso theSelection.Count > 0 Then
+        theView = theSelection.Item(1).Value
+        StatusLabel1.Text = theView.Name
+        Dim theDoc As INFITF.Document = listViewDocument(theView)
+        If theDoc IsNot Nothing Then
+          MsgBox(theDoc.FullName)
+        End If
+      Else
+        StatusLabel1.Text = ""
+      End If
+    Catch ex As Exception
+      StatusLabel1.Text = "Trouble reading the View. " & ex.Message
+    End Try
+  End Sub
+
+  Private Function listViewDocument(ByVal theView As DRAFTINGITF.DrawingView) As INFITF.Document
+    Dim theDoc As INFITF.Document = Nothing
+    Try
+      If theView.IsGenerative Then
+        Dim viewLinks As DRAFTINGITF.DrawingViewGenerativeLinks
+        viewLinks = theView.GenerativeLinks
+        Try
+          If TypeName(viewLinks.FirstLink.Parent) = "ProductDocument" OrElse TypeName(viewLinks.FirstLink.Parent) = "PartDocument" Then
+            theDoc = viewLinks.FirstLink.Parent
+            'Return theDoc
+          ElseIf TypeName(viewLinks.FirstLink.Parent) = "Bodies" Then
+            Dim theBody As MECMOD.Bodies = viewLinks.FirstLink.Parent
+            Dim thePart As MECMOD.Part = theBody.Parent
+            theDoc = thePart.Parent
+          Else
+            Dim theObj = viewLinks.FirstLink.Parent
+            theDoc = theObj.Parent.Parent
+          End If
+        Catch ex As Exception
+          StatusLabel1.Text = "Trouble reading the Link for this view"
+          MsgBox(ex.Message)
+        End Try
+      Else
+        StatusLabel1.Text = StatusLabel1.Text & " No link for this view."
+      End If
+
+    Catch ex As Exception
+      StatusLabel1.Text = "Trouble finding the document for view: " & theView.Name
+      MsgBox(ex.Message)
+      Return Nothing
+    End Try
+    Return theDoc
   End Function
 
 End Class
