@@ -25,10 +25,14 @@
     StatusLabel1.Text = ""
   End Sub
 
+#Region "Catia"
   Private Sub MenuCatia_Connect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuCatia_Connect.Click
     getCATIA()
   End Sub
 
+  Private Sub MenuCatia_GetDrawing_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuCatia_GetDrawing.Click
+    getDrawingDocument()
+  End Sub
   Private Sub MenuCatia_FindReplace_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuCatia_FindReplace.Click
     ReplaceText()
   End Sub
@@ -44,7 +48,7 @@
   Private Sub MenuCatia_ReadViewLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuCatia_ReadViewLink.Click
     ViewLink()
   End Sub
-
+#End Region
 #End Region
 
   Private Sub insertText()
@@ -68,7 +72,7 @@
       Next
 
       If mainView IsNot Nothing Then
-
+        mainView.Activate()
         Dim textCoords(2)
         StatusLabel1.Text = "Select Text Location"
         Dim status = drawingDoc.Indicate2D("Select Text Location", textCoords)

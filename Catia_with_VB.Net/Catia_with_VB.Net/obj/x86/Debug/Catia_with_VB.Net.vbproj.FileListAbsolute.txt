@@ -19,3 +19,7 @@ C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_w
 C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\obj\x86\Debug\Catia_with_VB.Net.exe
 C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\obj\x86\Debug\Catia_with_VB.Net.xml
 C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\obj\x86\Debug\Catia_with_VB.Net.pdb
+C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\bin\Debug\Interop.NavigatorTypeLib.dll
+C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\bin\Debug\Interop.SPATypeLib.dll
+C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\obj\x86\Debug\Interop.NavigatorTypeLib.dll
+C:\Users\rex.visser\Documents\GitHub\Catia-with-VB.Net\Catia_with_VB.Net\Catia_with_VB.Net\obj\x86\Debug\Interop.SPATypeLib.dll

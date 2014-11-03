@@ -31,6 +31,7 @@ Partial Class Form1
     Me.MenuCatia_FindReplace = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuCatia_Colors = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuCatia_InsertText = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuCatia_ReadViewLink = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuHelp = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuHelp_About = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuHelp_ClearStatusMsg = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,7 +42,7 @@ Partial Class Form1
     Me.Label2 = New System.Windows.Forms.Label()
     Me.txt_toFind = New System.Windows.Forms.TextBox()
     Me.txt_Replace = New System.Windows.Forms.TextBox()
-    Me.MenuCatia_ReadViewLink = New System.Windows.Forms.ToolStripMenuItem()
+    Me.MenuCatia_GetDrawing = New System.Windows.Forms.ToolStripMenuItem()
     Me.MenuStrip1.SuspendLayout()
     Me.StatusStrip1.SuspendLayout()
     Me.TableLayoutPanel1.SuspendLayout()
@@ -71,7 +72,7 @@ Partial Class Form1
     '
     'MenuCatia
     '
-    Me.MenuCatia.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuCatia_Connect, Me.MenuCatia_FindReplace, Me.MenuCatia_Colors, Me.MenuCatia_InsertText, Me.MenuCatia_ReadViewLink})
+    Me.MenuCatia.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuCatia_Connect, Me.MenuCatia_GetDrawing, Me.MenuCatia_FindReplace, Me.MenuCatia_Colors, Me.MenuCatia_InsertText, Me.MenuCatia_ReadViewLink})
     Me.MenuCatia.Name = "MenuCatia"
     Me.MenuCatia.Size = New System.Drawing.Size(46, 20)
     Me.MenuCatia.Text = "Catia"
@@ -99,6 +100,12 @@ Partial Class Form1
     Me.MenuCatia_InsertText.Name = "MenuCatia_InsertText"
     Me.MenuCatia_InsertText.Size = New System.Drawing.Size(153, 22)
     Me.MenuCatia_InsertText.Text = "Insert Text"
+    '
+    'MenuCatia_ReadViewLink
+    '
+    Me.MenuCatia_ReadViewLink.Name = "MenuCatia_ReadViewLink"
+    Me.MenuCatia_ReadViewLink.Size = New System.Drawing.Size(153, 22)
+    Me.MenuCatia_ReadViewLink.Text = "Read View Link"
     '
     'MenuHelp
     '
@@ -189,11 +196,11 @@ Partial Class Form1
     Me.txt_Replace.Size = New System.Drawing.Size(150, 20)
     Me.txt_Replace.TabIndex = 3
     '
-    'MenuCatia_ReadViewLink
+    'MenuCatia_GetDrawing
     '
-    Me.MenuCatia_ReadViewLink.Name = "MenuCatia_ReadViewLink"
-    Me.MenuCatia_ReadViewLink.Size = New System.Drawing.Size(153, 22)
-    Me.MenuCatia_ReadViewLink.Text = "Read View Link"
+    Me.MenuCatia_GetDrawing.Name = "MenuCatia_GetDrawing"
+    Me.MenuCatia_GetDrawing.Size = New System.Drawing.Size(153, 22)
+    Me.MenuCatia_GetDrawing.Text = "Get Drawing"
     '
     'Form1
     '
@@ -236,5 +243,6 @@ Partial Class Form1
   Friend WithEvents MenuCatia_Colors As System.Windows.Forms.ToolStripMenuItem
   Friend WithEvents MenuCatia_InsertText As System.Windows.Forms.ToolStripMenuItem
   Friend WithEvents MenuCatia_ReadViewLink As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MenuCatia_GetDrawing As System.Windows.Forms.ToolStripMenuItem
 
 End Class
